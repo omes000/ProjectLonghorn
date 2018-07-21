@@ -5,8 +5,9 @@
         <ul class="sidebar-menu">
             <li class="toggle-sidebar"><a href="#" data-toggle="sidebar"><i class="fas fa-users"></i></a></li>
             <% channels.forEach(function(channel){ %>
-                <li><a href="/channel/<%= channel._id%>" class="current-server" data-toggle="tooltip" data-placement="right" data-title="<%=channel.channel_name%>"><img src="/img/placeholder-channel<%= Math.floor((Math.random() * 4) + 1) %>.jpg" alt=""></a></li>
+                <li><a href="/channel/<%= channel._id%>" class="current-server" data-toggle="tooltip" data-placement="right" data-title="<%=channel.channel_name%>"><%=channel.channel_name[0]%></a></li>
             <% }) %>
+            
             <li><a href="#" class="join-server" data-start="modal-custom" data-target="#create-group" data-toggle="tooltip" data-placement="right" data-title="Join a Group"><i class="fa fa-plus"></i></a></li>
         </ul>
     </div>
@@ -15,7 +16,8 @@
         <div id="chat-list">
             <a href="/users/@me" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= currentUser.username %></a>
             <ul class="chat-list scroll-hijack">
-            
+              <li><a href="#">#  Gaming</a></li>
+              <li><a href="#">#  Book Club</a></li>
             </ul>
         </div>
         <div id="profile" class="page">

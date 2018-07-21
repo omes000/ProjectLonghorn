@@ -5,7 +5,7 @@
         <ul class="sidebar-menu">
             <li class="toggle-sidebar"><a href="#" data-toggle="sidebar"><i class="fas fa-users"></i></a></li>
             <% channels.forEach(function(channel){ %>
-                <li><a href="/channel/<%= channel._id%>" class="current-server" data-toggle="tooltip" data-placement="right" data-title="<%= channel.channel_name %>"><img src="/img/placeholder-channel<%= Math.floor((Math.random() * 4) + 1) %>.jpg" alt=""></a></li>
+                <li><a href="/channel/<%= channel._id%>" class="current-server" data-toggle="tooltip" data-placement="right" data-title="<%=channel.channel_name%>"><%=channel.channel_name[0]%></a></li>
             <% }) %>
             <li><a href="#" class="join-server" data-start="modal-custom" data-target="#create-group" data-toggle="tooltip" data-placement="right" data-title="Join a Group"><i class="fa fa-plus"></i></a></li>
         </ul>
@@ -14,22 +14,54 @@
 
     <div id="page">
         <div id="chat-list">
-            <a href="/users/@me" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= currentUser.username %></a>
-            <ul class="chat-list scroll-hijack">
-                    <% channel.participant.forEach(function(participant){ %>
-                        <%if(participant._id.equals(currentUser._id)){ %>
+            <a href="#" class="user"><%= channel.channel_name %></a>
 
-                        <% }else if(participant.online === true){ %>
-                            <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
-                        <% }else{ %>
-                            <li><a href="#"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
-                        <% } %>
-                    <% }); %>
+            <h7 style="margin:10px 10px 0 0; padding: 5px 0 0 0"><a href="#">#  Gaming</a></h7>
+            <ul class="chat-list scroll-hijack">
+                  <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random2948</a></li>
+                  <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random13</a></li>
+                  <% channel.participant.forEach(function(participant){ %>
+                      <%if(participant._id.equals(currentUser._id)){ %>
+
+                      <% }else if(participant.online === true){ %>
+                          <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
+                      <% }else{ %>
+                          <li><a href="#"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
+                      <% } %>
+                  <% }); %>
+            </ul>
+            <h7 style="margin:20px 20px 0 0; padding: 20px 0 0 0"><a href="#">#  Volleyball</a></h7>
+            <ul class="chat-list scroll-hijack">
+                  <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random2948</a></li>
+                  <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random13</a></li>
+                  <% channel.participant.forEach(function(participant){ %>
+                      <%if(participant._id.equals(currentUser._id)){ %>
+
+                      <% }else if(participant.online === true){ %>
+                          <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
+                      <% }else{ %>
+                          <li><a href="#"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
+                      <% } %>
+                  <% }); %>
+            </ul>
+            <h7 style="margin:20px 20px 0 0; padding: 20px 0 0 0"><a href="#">#  Book Club</a></h7>
+            <ul class="chat-list scroll-hijack">
+                  <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random2948</a></li>
+                  <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div>random13</a></li>
+                  <% channel.participant.forEach(function(participant){ %>
+                      <%if(participant._id.equals(currentUser._id)){ %>
+
+                      <% }else if(participant.online === true){ %>
+                          <li><a href="#" class="user"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
+                      <% }else{ %>
+                          <li><a href="#"><div class="avatar"><img src="/img/placeholder-avatar<%= Math.floor((Math.random() * 7) + 1) %>.jpg" /></div><%= participant.username %></a></li>
+                      <% } %>
+                  <% }); %>
             </ul>
         </div>
         <div id="chat" class="page">
             <div class="page-header clearfix">
-                <span><%= channel.channel_name %></span>
+                <span><%= channel.channel_name %> - Selected Channel</span>
                 <ul>
                     <!-- <li><a title="Online" href="#">Online - 1</a></li> -->
                 </ul>
@@ -42,7 +74,7 @@
                                     <a href="#" class="chat-message-author"><%= message.author.name %></a>
                                     <span class="chat-message-date"><%= moment(message.created_at).format("lll")  %></span>
                                     <div class="chat-message-message">
-                                            <%= message.text %>  
+                                            <%= message.text %>
                                     </div>
                                 </div>
                         </div>
