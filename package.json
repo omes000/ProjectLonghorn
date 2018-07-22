@@ -5,6 +5,7 @@
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
+    "sass": "node-sass client/sass/main.scss public/stylesheets/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -41,6 +42,7 @@
     "eslint-config-airbnb-base": "^13.0.0",
     "eslint-plugin-import": "^2.13.0",
     "install": "^0.12.1",
+    "node-sass": "^4.9.2",
     "nodemon": "^1.18.3",
     "npm": "^6.2.0"
   }
