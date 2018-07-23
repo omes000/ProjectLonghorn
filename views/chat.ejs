@@ -1,19 +1,25 @@
 <% include partials/header %>
-
+	 <% include partials/groupSidebar %>
     <!-- Page Content -->
-    <div id="sidebar">
-        <ul class="sidebar-menu">
-            <li class="toggle-sidebar"><a href="#" data-toggle="sidebar"><i class="fas fa-users"></i></a></li>
-            <% channels.forEach(function(channel){ %>
-                <li><a href="/channel/<%= channel._id%>" class="current-server" data-toggle="tooltip" data-placement="right" data-title="<%=channel.channel_name%>"><%=channel.channel_name[0]%></a></li>
-            <% }) %>
-            <li><a href="#" class="join-server" data-start="modal-custom" data-target="#create-group" data-toggle="tooltip" data-placement="right" data-title="Join a Group"><i class="fa fa-plus"></i></a></li>
-        </ul>
-    </div>
-
 
     <div id="page">
-        <div id="chat-list">
+		 <div id="chat-list">
+			  <a href="/users/@me" class="user"><%= channel.channel_name %></a>
+			  <p class="groupHeader">Channels <a href="#"><i class="fa fa-plus fa-fw fa-xs"></i></a></p>
+			  <ul class="chat-list scroll-hijack">
+				 <li><a href="#" class="activeChannel">#  Announcements</a></li>
+				 <li><a href="#">#  Gaming</a></li>
+				 <li><a href="#">#  Book Club</a></li>
+			  </ul>
+			  <p class="groupHeader"><i class="fas fa-caret-down"></i> Messages <a href="#"><i class="fa fa-plus fa-fw fa-xs"></i></a></p>
+			  <ul class="chat-list scroll-hijack">
+				 <li><a href="#">Omes000</a></li>
+				 <li><a href="#">Ajawak</a></li>
+				 <li><a href="#">Mstchmn</a></li>
+				 <li><a href="#">Wiseguy97, Omes000 & 3 others</a></li>
+			  </ul>
+		 </div>
+        <!-- <div id="chat-list">
             <a href="#" class="user"><%= channel.channel_name %></a>
 
             <h7 style="margin:10px 10px 0 0; padding: 5px 0 0 0"><a href="#">#  Gaming</a></h7>
@@ -58,10 +64,10 @@
                       <% } %>
                   <% }); %>
             </ul>
-        </div>
+        </div> -->
         <div id="chat" class="page">
             <div class="page-header clearfix">
-                <span><%= channel.channel_name %> - Selected Channel</span>
+                <span>#  Announcements</span>
                 <ul>
                     <!-- <li><a title="Online" href="#">Online - 1</a></li> -->
                 </ul>

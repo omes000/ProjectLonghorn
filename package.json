@@ -1,21 +1,21 @@
 {
-  "name": "discord-clone",
+  "name": "ProjectLonghorn",
   "version": "1.0.0",
-  "description": "A \"Discord clone\" with Socket.io, Node.js & MongoDB...",
+  "description": "Longhorn App",
   "main": "app.js",
   "scripts": {
     "start": "node app.js",
-    "sass": "node-sass client/sass/main.scss public/stylesheets/styles.css",
+    "scss": "node-sass client/scss/main.scss public/stylesheets/styles.css",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThalKod/discord-clone.git"
+    "url": "https://github.com/omes000/ProjectLonghorn.git"
   },
-  "author": "Thal Marcelin",
+  "author": "Umer Rathore & Ebad Rahman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ThalKod/discord-clone/issues"
+    "url": "https://github.com/omes000/ProjectLonghorn/issues"
   },
   "homepage": "https://github.com/ThalKod/discord-clone#readme",
   "dependencies": {

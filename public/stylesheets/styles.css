@@ -12306,3 +12306,12 @@ section[class].vh-25 {
     font-size: 1.25em; }
   .modal-brand-caption .logo > span {
     margin-top: -2px; } }
+
+.activeChannel {
+  font-weight: bold;
+  color: #CCCCCC !important; }
+
+.groupHeader {
+  margin: 10px 10px 0 0 !important;
+  padding: 10px 10px  0 !important;
+  color: #CCCCCC; }

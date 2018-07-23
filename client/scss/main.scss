@@ -1,0 +1,19 @@
+@import "./vendor/bootstrap.min";
+@import "./vendor/font-awesome.min";
+@import "./vendor/fontawesome-all.min";
+@import "./vendor/jquery.mCustomScrollbar";
+@import "./vendor/minicord";
+@import "./vendor/main-responsive";
+
+
+.activeChannel{
+	font-weight: bold;
+	color: #CCCCCC !important;
+}
+
+
+.groupHeader{
+	margin: 10px 10px 0 0 !important;
+	padding: 10px 10px  0 !important;
+	color:#CCCCCC;
+}

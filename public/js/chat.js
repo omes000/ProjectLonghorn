@@ -1,7 +1,7 @@
 /* eslint-disable */
 const socket = io();
-const chatList = $("#chat-list ul");
-const username = $("#chat-list a");
+// const chatList = $("#chat-list ul");
+// const username = $("#chat-list a");
 
 socket.on("connect", function(){
     console.log("Connected");
@@ -19,14 +19,14 @@ socket.on("connect", function(){
             console.log("No Error");
         }
     });
-    
+
 });
 
 jQuery("#message-form").on("submit", function(e){
     e.preventDefault();
 
     var messageTextBox =  jQuery("[name=message]");
-    
+
     var data = {
         userID,
         channelID : channelID,
@@ -51,7 +51,7 @@ socket.on("newMessage", function(message){
                 <a href="#" class="chat-message-author">${message.author.name}</a>
                 <span class="chat-message-date">${formatedTime}</span>
                 <div class="chat-message-message">
-                        ${message.text} 
+                        ${message.text}
                 </div>
             </div>
     `);
@@ -93,7 +93,7 @@ function scrollToBottom(){
     $.get("/current/channel/"+ channelID )
         .done(function(data){
             chatList.html("");
-            data.forEach(function(participant){ 
+            data.forEach(function(participant){
                 const randomNumber = Math.floor((Math.random() * 7) + 1);
                 const pUsername = participant.username;
                 if(pUsername !== username["0"].text){
